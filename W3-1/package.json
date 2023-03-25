@@ -1,5 +1,5 @@
 {
-  "name": "w2-2",
+  "name": "w3-1",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,9 +10,11 @@
   "license": "ISC",
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^2.0.2",
+    "@nomiclabs/hardhat-etherscan": "^3.1.7",
     "hardhat": "^2.13.0"
   },
   "dependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.2.2",
     "@openzeppelin/contracts": "^4.8.2",
     "dotenv": "^16.0.3"
   }
