@@ -7,8 +7,8 @@ import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 
 contract NFTMarket is IERC721Receiver {
     mapping(uint => uint) public tokenIdPrice;
-address public immutable token;
-address public immutable nftToken;
+    address public immutable token;
+    address public immutable nftToken;
 
     constructor(address _token, address _nftToken){
         token = _token;

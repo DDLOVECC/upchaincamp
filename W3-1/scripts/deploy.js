@@ -1,32 +1,46 @@
-// We require the Hardhat Runtime Environment explicitly here. This is optional
-// but useful for running the script in a standalone fashion through `node <script>`.
-//
-// You can also run a script with `npx hardhat run <script>`. If you do that, Hardhat
-// will compile your contracts, add the Hardhat Runtime Environment's members to the
-// global scope, and execute the script.
 const hre = require("hardhat");
 
 async function main() {
-  const currentTimestampInSeconds = Math.round(Date.now() / 1000);
-  const unlockTime = currentTimestampInSeconds + 60;
+    const MyToken = await hre.ethers.getContractFactory("MyToken");
+    const myToken = await MyToken.deploy();
 
-  const lockedAmount = hre.ethers.utils.parseEther("0.001");
+    await myToken.deployed();
 
-  const Lock = await hre.ethers.getContractFactory("Lock");
-  const lock = await Lock.deploy(unlockTime, { value: lockedAmount });
+    console.log(
+        `MyToken deployed to ${myToken.address}`
+    );
 
-  await lock.deployed();
+    const Vault = await hre.ethers.getContractFactory("Vault");
+    const vault = await Vault.deploy(myToken.address);
 
-  console.log(
-    `Lock with ${ethers.utils.formatEther(
-      lockedAmount
-    )}ETH and unlock timestamp ${unlockTime} deployed to ${lock.address}`
-  );
+    await vault.deployed();
+
+    console.log(
+        `Vault  deployed to ${vault.address}`
+    );
+
+    const MyErc721 = await hre.ethers.getContractFactory("MyErc721");
+    const myErc721 = await MyErc721.deploy();
+
+    await myErc721.deployed();
+
+    console.log(
+        `MyErc721 deployed to ${myErc721.address}`
+    );
+
+    const NFTMarket = await hre.ethers.getContractFactory("NFTMarket");
+    const nFTMarket = await NFTMarket.deploy(myToken.address,myErc721.address);
+
+    await nFTMarket.deployed();
+
+    console.log(
+        `NFTMarket deployed to ${nFTMarket.address}`
+    );
 }
 
 // We recommend this pattern to be able to use async/await everywhere
 // and properly handle errors.
 main().catch((error) => {
-  console.error(error);
-  process.exitCode = 1;
+    console.error(error);
+    process.exitCode = 1;
 });

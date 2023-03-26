@@ -10,7 +10,7 @@ contract MyToken is ERC20 {
         _mint(msg.sender, 100000 * 10 ** decimals());
     }
 
-    function mintToken() public OnlyOwner {
+    function mintToken() public onlyOwner {
         _mint(msg.sender, 100000 * 10 ** decimals());
     }
 
