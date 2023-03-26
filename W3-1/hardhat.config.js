@@ -7,7 +7,7 @@ const { API_URL, PRIVATE_KEY ,API_KEY} = process.env
 module.exports = {
   solidity: "0.8.18",
   networks: {
-    sepolia: {
+    polygon_mumbai: {
       url: API_URL,
       accounts: [`${PRIVATE_KEY}`],
     }
