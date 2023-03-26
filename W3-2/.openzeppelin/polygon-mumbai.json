@@ -1,0 +1,62 @@
+{
+  "manifestVersion": "3.2",
+  "admin": {
+    "address": "0x342002f8917e6c0e1B6A70CcF9c02dB71e1990aC",
+    "txHash": "0x853e6d23fbcd1956226ffb176ab4f1e7d3ff58afc7803d0f927d42d401748e2c"
+  },
+  "proxies": [
+    {
+      "address": "0xdb7408460e173604BBeB8A6fcDa02637e047d3d7",
+      "txHash": "0x040215b4abee57fb6b3770f34c5e2270e6bd828d5263767c39f3524579084a49",
+      "kind": "transparent"
+    }
+  ],
+  "impls": {
+    "892d024d93241fcbdbc0eaf0ee4eeb74619be2266bce0ffbdf09132c797517a0": {
+      "address": "0x8A333b1ebEcc619B0d923760044ac08c36B74124",
+      "txHash": "0x504e94dcbc2c48032fcda23cae8ea4124073655e199633afd7b316cbfa4ad223",
+      "layout": {
+        "solcVersion": "0.8.18",
+        "storage": [
+          {
+            "label": "counter",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint256",
+            "contract": "ERC20Token",
+            "src": "contracts\\ERC20Token.sol:5"
+          }
+        ],
+        "types": {
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        }
+      }
+    },
+    "682236a3bf8139251500d56abda04126d82624f77d271441ee97c5105e527398": {
+      "address": "0xf24DCcDFafbA6Eb1cc31cDe9425f054c7f14D193",
+      "txHash": "0xa6a0451e1e3417cef2001326806df1f1189a19c4151e68a3a25861b2e2c4200a",
+      "layout": {
+        "solcVersion": "0.8.18",
+        "storage": [
+          {
+            "label": "counter",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint256",
+            "contract": "ERC20TokenV1",
+            "src": "contracts\\ERC20TokenV1.sol:5"
+          }
+        ],
+        "types": {
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        }
+      }
+    }
+  }
+}
