@@ -13,7 +13,7 @@ async function parseTransferEvent(event) {
 }
 
 async function main() {
-    let provider = new ethers.providers.WebSocketProvider("wss://polygon-mumbai.g.alchemy.com/v2/P2czSffgj_KvJVN6bhZvTKEZHt_UWQLk");
+    let provider = new ethers.providers.WebSocketProvider("wss://polygon-mumbai.g.alchemy.com/v2/XX");
     let myRec721Token = new ethers.Contract(ERC721Addr.address, ERC721TokenABI, provider)
 
     let filter = myRec721Token.filters.Transfer();
