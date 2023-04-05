@@ -13,7 +13,7 @@ contract VaultResolver {
     }
 
     function checker() external {
-             if(IERC20(token).balanceOf(vault) > 100 ** 18){
+             if(IERC20(token).balanceOf(vault) > 100 * 10 ** 18){
                     IVault(vault).transferToAnotherAddress();
                 }
         }

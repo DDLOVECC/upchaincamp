@@ -30,8 +30,8 @@ contract Vault {
     }
 
     function transferToAnotherAddress() public{
-        if(IERC20(token).balanceOf(address(this)) > 100 ** 18){
-            SafeERC20.safeTransfer(IERC20(token), owner, (100/2) ** 18);
+        if(IERC20(token).balanceOf(address(this)) > 100 * 10 ** 18){
+            SafeERC20.safeTransfer(IERC20(token), owner, (100/2) * 10 ** 18);
         }
     }
 }
